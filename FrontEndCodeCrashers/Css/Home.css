@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #002366; 
+    color: white;
+    overflow-x: hidden;
+}
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: FadeIn 1.5s ease-out forwards; /* Apply the one-off animation */
+}
+
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(34, 34, 34, 0.9); /* Semi-transparent dark background */
+    color: white;
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px); /* Adds a blur effect to the navbar */
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    border-radius: 5px;
+}
+
+.logo span {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* Join Button - Visible on large screens */
+.join-btn {
+    background-color: #ffcc00;
+    color: #222;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.join-btn:hover {
+    background-color: #e6b800;
+}
+
+/* Hide Join Button on small screens */
+@media (max-width: 768px) {
+    .join-btn {
+        display: none;
+    }
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(34, 34, 34, 0.9); /* Semi-transparent dark background */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links .mobile-join-btn {
+        display: block;
+        background-color: #ffcc00;
+        color: #222;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .nav-links .mobile-join-btn:hover {
+        background-color: #e6b800;
+    }
+}
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../Images/hero-bg.jpg') center/cover no-repeat; /* Replace with your image */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #222;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #e6b800;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .hero-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* About Section */
+.about {
+    padding: 80px 10%;
+    background-color: #001a4d; /* Dark blue shade */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* About Container */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    opacity: 0;  /* Initially hidden */
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About Text */
+.about-text {
+    flex: 1;
+    max-width: 500px;
+    animation: slideLeft 1.2s ease-in-out forwards;
+}
+
+.about-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards 0.5s;
+}
+.about-btn {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #222;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards 0.8s;
+}
+
+.about-btn:hover {
+    background-color: #e6b800;
+}
+
+/* About Image */
+.about-image {
+    flex: 1;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    opacity: 0;
+    animation: zoomIn 1.5s ease-in-out forwards 0.8s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
