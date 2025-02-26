@@ -1,0 +1,105 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* PROJECTS SECTION */
+.projects-section {
+    background-color: #020817; /* Matches Events & About Sections */
+    padding: 100px 5%;
+    text-align: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Title Styling */
+.projects-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    background: linear-gradient(to right, #4da7ff, #0066ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease-in-out 0.5s forwards;
+}
+
+/* Projects Container */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Project Card */
+.project-card {
+    position: relative;
+    width: 300px;
+    background: #09142f;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInZoom 0.8s ease-in-out 0.6s forwards;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(77, 167, 255, 0.4);
+}
+
+/* Project Image */
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Project Info (Hidden Initially) */
+.project-info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 102, 255, 0.9);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    border-radius: 0 0 15px 15px;
+    transition: bottom 0.5s ease-in-out;
+}
+
+/* Show Info on Click */
+.project-card.active .project-info {
+    bottom: 0;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-In from Bottom */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-In with Zoom */
+@keyframes fadeInZoom {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
