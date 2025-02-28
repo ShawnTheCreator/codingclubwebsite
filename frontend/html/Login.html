@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Code Crashers</title>
-        <link rel="icon" href="../images/icon.jpeg" type="image/jpeg">
-        <link rel="stylesheet" href="../css/Login.css">
-        <link rel="stylesheet" href="../css/Navbar.css">
-        <script src="../javascript/login.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Crashers</title>
+    <link rel="icon" href="../images/icon.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="../css/Login.css">
+    <link rel="stylesheet" href="../css/Navbar.css">
+    <script src="../javascript/login.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
 <body>
 
 <input type="checkbox" id="mobile-menu-toggle">
@@ -43,7 +43,6 @@
     </div>
 </nav>
 
-
 <div class="side-nav">
     <ul class="nav-links">
         <li><a href="../home.html">Home</a></li>
@@ -55,29 +54,30 @@
     <a href="./Login.html" class="join-button">Join Now</a>
 </div>
 
-
 <div class="overlay" onclick="document.getElementById('mobile-menu-toggle').checked = false;"></div>
 
 <div class="login-body"> 
     <div class="login-container">
         <h2 class="login-title">Welcome</h2>
-       <form id="login-form" class="login-form">
-    <div class="input-group">
-        <input type="email" id="email" placeholder="Email" required>
-    </div>
-    <div class="input-group">
-        <input type="password" id="password" placeholder="Password" required>
-    </div>
-    
-    <button type="submit" class="login-btn">Login</button>
-</form>
+        <form id="login-form" class="login-form">
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
 
+            <!-- Error message -->
+            <p id="error-message" style="color: red; display: none; text-align: center; font-weight: bold;">
+                Wrong email or password!
+            </p>
 
- 
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
         <div class="login-link" style="color: white; font-size: 1rem;">
-            <p>Don't have an account? <a href="./SignUp.html"  style="color: white; text-decoration: none; font-weight: bold;">SignUp</a></p>
+            <p>Don't have an account? <a href="./SignUp.html" style="color: white; text-decoration: none; font-weight: bold;">SignUp</a></p>
         </div>
-        
     </div>
 </div>
 
