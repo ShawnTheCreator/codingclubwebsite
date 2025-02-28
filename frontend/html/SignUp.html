@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Code Crashers</title>
+    <link rel="stylesheet" href="../css/SignUp.css">
+    <link rel="stylesheet" href="../css/Navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navbar -->
+<input type="checkbox" id="mobile-menu-toggle">
+
+<nav class="navbar">
+    <div class="navbar-content">
+        <label for="mobile-menu-toggle" class="mobile-menu-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </label>
+        
+        <a href="#" class="logo">
+            <img src="../images/Logo.png" alt="Code Crashers Logo">
+            <span>Code Crashers</span>
+        </a>
+        
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        
+        <a href="./Login.html" class="join-button">Join Now</a>
+    </div>
+</nav>
+
+
+<div class="side-nav">
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="./Login.html" class="join-button">Join Now</a>
+</div>
+
+
+<div class="overlay" onclick="document.getElementById('mobile-menu-toggle').checked = false;"></div>
+
+
+<div class="signup-body"> 
+    <div class="signup-container">
+        <h2 class="signup-title">Sign Up</h2>
+        <form class="signup-form">
+            <div class="input-group">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+
+        
+        <div class="login-link" style="color: white; font-size: 1rem;">
+            <p>Already have an account? <a href="./login.html" class="login-btn" style="color: white; text-decoration: none; font-weight: bold;">Log In</a></p>
+        </div>
+        
+    </div>
+</div>
+
+</body>
+</html>

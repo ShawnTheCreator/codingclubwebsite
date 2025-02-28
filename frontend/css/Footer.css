@@ -1,0 +1,86 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* FOOTER STYLES */
+.footer {
+    background-color: #020817;
+    color: white;
+    padding: 50px 5%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Footer Logo & Description */
+.footer-logo img {
+    width: 70px; /* Increased size */
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* Navigation Links */
+.footer-links h3,
+.footer-socials h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #4da7ff;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #4da7ff;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 26px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.3);
+    color: #4da7ff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    opacity: 0.8;
+}

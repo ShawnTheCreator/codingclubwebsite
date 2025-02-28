@@ -1,0 +1,13 @@
+pg
+dotenv
+express
+cors
+pg-pool
+body-parser
+nodemon
+morgan
+bcryptjs
+jsonwebtoken
+sequelize
+pg-hstore
+axios

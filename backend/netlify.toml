@@ -1,0 +1,3 @@
+[build]
+  functions = "netlify/functions" # This will point to your serverless functions directory
+  publish = "build" # Your front-end build directory

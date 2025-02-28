@@ -1,0 +1,202 @@
+/* Reset default styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;  /* Prevents scrolling */
+    background-color: #020817; /* Fallback background */
+}
+
+/* Main container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between text and image */
+    height: 100vh;
+    padding: 0 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Radial gradient overlay */
+.gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.1), transparent 50%);
+}
+
+/* Floating particles */
+.particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 102, 255, 0.2);
+    animation: float 10s ease-in-out infinite alternate, fadeIn 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* Floating animation */
+@keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    50% { transform: translate(-20px, -20px) rotate(180deg) scale(1.1); }
+    100% { transform: translate(20px, 20px) rotate(360deg) scale(1); }
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Create multiple particles with different sizes and positions */
+.particle:nth-child(1) { width: 200px; height: 200px; left: 10%; top: 20%; animation-duration: 15s; }
+.particle:nth-child(2) { width: 300px; height: 300px; left: 60%; top: 50%; animation-duration: 12s; }
+.particle:nth-child(3) { width: 150px; height: 150px; left: 80%; top: 30%; animation-duration: 18s; }
+.particle:nth-child(4) { width: 250px; height: 250px; left: 30%; top: 70%; animation-duration: 14s; }
+.particle:nth-child(5) { width: 180px; height: 180px; left: 50%; top: 10%; animation-duration: 16s; }
+
+/* Hero Content (Text) */
+.content {
+    position: relative;
+    text-align: left;
+    color: white;
+    font-family: system-ui, -apple-system, sans-serif;
+    max-width: 40%;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+/* Image Container */
+.image-container {
+    max-width: 40%;
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideInRight 1s ease-out forwards;
+}
+
+/* Image Styling */
+.image-container img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+/* Title Styling */
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #4da7ff, #0066ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Subtitle Styling */
+.subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    max-width: 600px;
+}
+
+.signup-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #0077b5, #64ffda);
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.6);
+}
+
+.signup-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #005582, #50e6c1);
+    box-shadow: 0 0 15px rgba(100, 255, 218, 1);
+}
+
+
+/* Animation for Text Appearing from the Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation for Image Appearing from the Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .content, .image-container {
+        max-width: 80%;
+        text-align: center;
+    }
+    .title {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    .image-container img {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content, .image-container {
+        max-width: 90%;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .image-container img {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content, .image-container {
+        max-width: 95%;
+    }
+    .title {
+        font-size: 1.75rem;
+    }
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    .image-container img {
+        max-height: 300px;
+    }
+}
