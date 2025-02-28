@@ -7,6 +7,7 @@
         <link rel="icon" href="../images/icon.jpeg" type="image/jpeg">
         <link rel="stylesheet" href="../css/Login.css">
         <link rel="stylesheet" href="../css/Navbar.css">
+        <script src="../javascript/login.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
 <body>
@@ -60,16 +61,17 @@
 <div class="login-body"> 
     <div class="login-container">
         <h2 class="login-title">Welcome</h2>
-        <form class="login-form">
-            <div class="input-group">
-                <input type="email" placeholder="Email" required>
-            </div>
-            <div class="input-group">
-                <input type="password" placeholder="Password" required>
-            </div>
-            
-            <button type="submit" class="login-btn">Login</button>
-        </form>
+       <form id="login-form" class="login-form">
+    <div class="input-group">
+        <input type="email" id="email" placeholder="Email" required>
+    </div>
+    <div class="input-group">
+        <input type="password" id="password" placeholder="Password" required>
+    </div>
+    
+    <button type="submit" class="login-btn">Login</button>
+</form>
+
 
  
         <div class="login-link" style="color: white; font-size: 1rem;">
