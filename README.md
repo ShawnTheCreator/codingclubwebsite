@@ -1,3 +1,5 @@
+This is the link to the Live website we deployed it and its responsive https://crashcoders.netlify.app/
+
 Group Members Code Crashers 
 Shawn Chareka eduv4809969
 Daniel Potgieter eduv5379510
