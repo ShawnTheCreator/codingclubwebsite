@@ -1,11 +1,10 @@
-// Import the required modules
 const { Pool } = require("pg");
 const dotenv = require("dotenv");
 
-// Load environment variables from .env file
+
 dotenv.config({ path: "C:/Users/HP/Desktop/Code Crashers/Backend/.env" });
 
-// Log the loaded environment variables for debugging
+
 console.log("Loaded Environment Variables:", {
   DB_USER: process.env.DB_USER,
   DB_HOST: process.env.DB_HOST,
@@ -14,22 +13,22 @@ console.log("Loaded Environment Variables:", {
   DB_PASSWORD: process.env.DB_PASSWORD,
 });
 
-// Create a new pool with SSL enabled
+
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
-  ssl: { rejectUnauthorized: false }, // ✅ Enable SSL to avoid pg_hba.conf error
+  ssl: { rejectUnauthorized: false },
 });
 
-// Function to initialize the database
+
 const initializeDatabase = async () => {
   try {
     const client = await pool.connect();
 
-    // Create users table if it doesn't exist
+
     await client.query(`
       CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
@@ -50,7 +49,7 @@ const initializeDatabase = async () => {
   }
 };
 
-// Test connection and initialize database
+
 (async () => {
   try {
     await initializeDatabase();

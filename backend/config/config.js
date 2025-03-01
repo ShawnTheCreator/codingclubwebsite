@@ -1,4 +1,4 @@
-const { Client } = require('pg'); // Import the 'pg' library
+const { Client } = require('pg'); 
 require('dotenv').config(); 
 
 const client = new Client({

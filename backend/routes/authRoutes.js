@@ -15,18 +15,15 @@ if (!JWT_SECRET) {
   process.exit(1);
 }
 
-// CORS options for routes
 const corsOptions = {
-  origin: 'https://victoriouscrossover.netlify.app', // Replace with your frontend URL
+  origin: 'https://crashcoders.netlify.app/', 
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
   credentials: false
 };
 
-// Apply CORS globally
 router.use(cors(corsOptions));
 
-// Middleware to authenticate JWT
 const authenticateJWT = (req, res, next) => {
   const token = req.header("Authorization")?.replace("Bearer ", "");
   if (!token) {
@@ -42,12 +39,12 @@ const authenticateJWT = (req, res, next) => {
   });
 };
 
-// Handle preflight for all routes
+
 router.options('*', cors(corsOptions));
 
-// Signup Route
+
 router.post('/signup', async (req, res) => {
-  const { name, email, password } = req.body; // Removed role from destructuring
+  const { name, email, password } = req.body; 
 
   try {
     const userExists = await pool.query('SELECT * FROM public.users WHERE email = $1', [email]);
@@ -57,11 +54,11 @@ router.post('/signup', async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await pool.query(
-      'INSERT INTO public.users (name, email, password) VALUES ($1, $2, $3) RETURNING *', // Removed role from query
+      'INSERT INTO public.users (name, email, password) VALUES ($1, $2, $3) RETURNING *', 
       [name, email, hashedPassword]
     );
 
-    // Remove password from response
+ 
     const { password: _, ...userWithoutPassword } = newUser.rows[0];
     res.status(201).json({ 
       message: 'User created successfully', 
@@ -73,7 +70,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-// Login Route
+
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -89,12 +86,12 @@ router.post('/login', async (req, res) => {
     }
 
     const token = jwt.sign(
-      { id: user.rows[0].id, email: user.rows[0].email }, // Removed role from token payload
+      { id: user.rows[0].id, email: user.rows[0].email },
       JWT_SECRET,
       { expiresIn: '1h' }
     );
 
-    // Remove password from response
+    
     const { password: _, ...userWithoutPassword } = user.rows[0];
     res.status(200).json({ 
       message: 'Login successful', 
@@ -107,7 +104,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Delete Account Route (Protected)
+
 router.delete('/delete-account', authenticateJWT, async (req, res) => {
   const { email } = req.body;
   const { user } = req;
