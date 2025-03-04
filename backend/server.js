@@ -11,14 +11,14 @@ const PORT = process.env.PORT || 5000;
 
 // CORS configuration
 const corsOptions = {
-  origin: 'https://crashcoders.netlify.app', // Ensure this is correct
+  origin: 'https://crashcoders.netlify.app', // ✅ Ensure this is correct
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: false,
+  credentials: true, // 🔥 Allow credentials (cookies, authorization headers)
 };
 
-app.use(cors(corsOptions)); // Apply CORS globally
-app.options('*', cors(corsOptions)); // Explicitly handle OPTIONS requests
+app.use(cors(corsOptions)); // ✅ Apply CORS globally
+app.options('*', cors(corsOptions)); // ✅ Handle preflight requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
