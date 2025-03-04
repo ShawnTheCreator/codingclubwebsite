@@ -2,18 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.getElementById("login-form");
     const errorMessage = document.getElementById("error-message");
 
+    if (!loginForm) return; // Prevent script errors if form doesn't exist
+
     loginForm.addEventListener("submit", async function (event) {
         event.preventDefault(); // Prevent default form submission
 
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
 
         try {
-            const response = await fetch('https://codingclubwebsite.onrender.com/login', {
+            const response = await fetch('https://codingclubwebsite.onrender.com/auth/login', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
+                credentials: "include", // If backend needs authentication
                 body: JSON.stringify({ email, password })
             });
 
@@ -21,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 // Successful login, redirect user
-                window.location.href = "../home.html"; // Change to your dashboard page if needed
+                window.location.href = "/home.html"; // Adjust based on actual file structure
             } else {
                 // Show error message
                 errorMessage.textContent = data.message || "Wrong email or password!";
