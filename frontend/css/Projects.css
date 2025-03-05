@@ -1,16 +1,15 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 /* PROJECTS SECTION */
 .projects-section {
     background-color: #020817; /* Matches Events & About Sections */
-    padding: 100px 5%;
+    padding: 120px 5% 5% 5%;  /* Adjusted padding */
     text-align: center;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeIn 1s ease-in-out forwards;
+    position: relative;
+    margin-top: 0px;  /* Added margin to move the section lower */
 }
 
 /* Title Styling */

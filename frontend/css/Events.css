@@ -1,7 +1,6 @@
-/* EVENTS SECTION */
 .events-section {
-    background-color: #020817; /* Matches About Section */
-    padding: 100px 5%;
+    background-color: #020817;
+    padding: 120px 5% 5% 5%; 
     text-align: center;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
@@ -9,12 +8,14 @@
     transform: translateY(30px);
     animation: fadeIn 1s ease-in-out forwards;
     position: relative;
+    padding-top: 0px; 
 }
 
-/* Title Styling */
+
 .events-title {
     font-size: 2.5rem;
     margin-bottom: 40px;
+    margin-top: 100px;
     font-weight: 600;
     background: linear-gradient(to right, #4da7ff, #0066ff);
     -webkit-background-clip: text;
@@ -25,33 +26,33 @@
     animation: fadeInUp 1s ease-in-out 0.5s forwards;
 }
 
-/* SLIDER WRAPPER */
+
 .events-slider {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
 
-/* SLIDER CONTAINER (HORIZONTAL SCROLL) */
+
 .events-container {
     display: flex;
     gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
     padding-bottom: 20px;
-    scrollbar-width: none; /* Hides scrollbar on Firefox */
+    scrollbar-width: none; 
 }
 
-/* Hides scrollbar for Webkit browsers (Chrome, Safari) */
+
 .events-container::-webkit-scrollbar {
     display: none;
 }
 
-/* EVENT CARD */
+
 .event-card {
     flex: 0 0 auto;
-    width: calc(33.33% - 20px); /* Fit 3 cards per row on desktop */
-    min-height: 500px; /* Use min-height instead of fixed height */
+    width: calc(33.33% - 20px); 
+    min-height: 500px; 
     height: auto;
     background: #09142f;
     border-radius: 15px;
@@ -62,7 +63,7 @@
     transform: scale(0.9);
     animation: fadeInZoom 0.8s ease-in-out 0.6s forwards;
     display: flex;
-    flex-direction: column; /* Stack children vertically */
+    flex-direction: column;
     position: relative;
 }
 
@@ -71,7 +72,7 @@
     box-shadow: 0px 10px 30px rgba(77, 167, 255, 0.4);
 }
 
-/* EVENT IMAGE */
+
 .event-image {
         display: block;
         width: 100%;       
@@ -85,27 +86,27 @@
     filter: brightness(0.7);
 }
 
-/* EVENT INFO */
+
 .event-info {
     position: absolute;
-    bottom: -100%; /* Initially hidden below the card */
+    bottom: -100%; 
     left: 0;
     width: 100%;
-    height: 100%; /* Cover the entire card */
+    height: 100%; 
     background: rgba(0, 102, 255, 0.9);
     color: white;
     padding: 20px;
     text-align: left;
     border-radius: 15px;
     font-size: 1rem;
-    max-height: 100%; /* Ensure it doesn't exceed the card height */
-    overflow-y: auto; /* Add scrollbar if content overflows */
-    transition: bottom 0.5s ease-in-out; /* Smooth slide-up animation */
+    max-height: 100%;
+    overflow-y: auto;
+    transition: bottom 0.5s ease-in-out; 
 }
 
 
 .event-card:hover .event-info {
-    bottom: 0; /* Slide up to show content */
+    bottom: 0;
 }
 
 .event-info h3 {
@@ -114,7 +115,7 @@
 }
 
 .event-info p {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     line-height: 1.5;
     overflow: visible; /* Ensure text isn't cut off */
     display: -webkit-box;

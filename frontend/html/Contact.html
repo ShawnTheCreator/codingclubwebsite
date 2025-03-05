@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon.jpeg" type="image/jpeg">
+    <title>Coding Club</title>
+    <link rel="stylesheet" href="../css/Contact.css">
+    <link rel="stylesheet" href="../css/Navbar.css">
+    <link rel="stylesheet" href="../css/Banner.css">
+    <script src="../javascript/login.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <input type="checkbox" id="mobile-menu-toggle">
+
+    <nav class="navbar">
+        <div class="navbar-content">
+            <label for="mobile-menu-toggle" class="mobile-menu-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </label>
+            
+            <a href="#" class="logo">
+                <img src="../images/Logo.png" alt="Code Crashers Logo">
+                <span>Code Crashers</span>
+            </a>
+            
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="../home.html">Home</a></li>
+                    <li><a href="./About.html">About</a></li>
+                    <li><a href="./Events.html">Events</a></li>
+                    <li><a href="./Projects.html">Projects</a></li>
+                </ul>
+            </div>
+            
+            <a href="./Login.html" class="join-button">Join Now</a>
+        </div>
+    </nav>
+    
+    <div class="side-nav">
+        <ul class="nav-links">
+            <li><a href="../home.html">Home</a></li>
+            <li><a href="./About.html">About</a></li>
+            <li><a href="./Events.html">Events</a></li>
+            <li><a href="./Projects.html">Projects</a></li>
+        </ul>
+        <a href="./Login.html" class="join-button">Join Now</a>
+    </div>
+    
+    <div class="overlay" onclick="document.getElementById('mobile-menu-toggle').checked = false;"></div>
+    <div class="container">
+        <div class="contact-content">
+            <h1 class="contact-title">Contact Us</h1>
+            <p class="subtitle">We'd love to hear from you! Reach out to us and we'll get back to you as soon as possible.</p>
+        </div>
+
+        <div class="contact-form">
+            <form action="#">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="gradient-overlay"></div>
+    </div>
+
+</body>
+</html>
