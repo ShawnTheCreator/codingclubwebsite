@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/Navbar.css" />
+        <link rel="stylesheet" href="../css/Projects.css" />
+        <link rel="stylesheet" href="../css/Banner.css"/>
+        <script src="./javascript/scrollIntoView.js"></script>
+        <script src="./javascript/HeroBackground.js"></script>
+    </head>
+    <body>
+        <input type="checkbox" id="mobile-menu-toggle">
+
+
+        <nav class="navbar">
+            <div class="navbar-content">
+               
+                <label for="mobile-menu-toggle" class="mobile-menu-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+                
+            
+                <a href="#" class="logo">
+                    <img src="../images/Logo.png" alt="Code Crashers Logo">
+                    <span>Code Crashers</span>
+                </a>
+                
+                
+           
+                <div class="nav-links-container">
+                    <ul class="nav-links">
+                        <li><a href="../home.html">Home</a></li>
+                        <li><a href="../frontend/html/About.html">About</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+             
+                <a href="./html/Login.html" class="join-button">Join Now</a>
+            </div>
+        </nav>
+        
+        
+        <div class="side-nav">
+            <ul class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="./Login.html" class="join-button">Join Now</a>
+        </div>
+        
+        
+        <div class="overlay" onclick="document.getElementById('mobile-menu-toggle').checked = false;"></div>
+        <section id="projects" class="projects-section">
+            <h2 class="projects-title">Team Projects</h2>
+            <div class="projects-container">
+                
+              
+                <div class="project-card">
+                    <img src="../images/project5.png" alt="Project 1" class="project-image">
+                    <div class="project-info">
+                        <h3>Church Website</h3>
+                        <p>A website for a local church that consists of lessons</p>
+                    </div>
+                </div>
+        
+           
+                <div class="project-card">
+                    <img src="../images/project4.png" alt="Project 2" class="project-image">
+                    <div class="project-info">
+                        <h3>Personal Finance Tracker</h3>
+                        <p>A budgeting app that helps users manage expenses and savings efficiently.</p>
+                    </div>
+                </div>
+        
+           
+                <div class="project-card">
+                    <img src="../images/project3.png" alt="Project 3" class="project-image">
+                    <div class="project-info">
+                        <h3>Smart Home Automation</h3>
+                        <p>A system to control home appliances remotely using IoT technology.</p>
+                    </div>
+                </div>
+        
+         
+                <div class="project-card">
+                    <img src="../images/project2.png" alt="Project 4" class="project-image">
+                    <div class="project-info">
+                        <h3>E-Learning Platform</h3>
+                        <p>A web-based platform offering interactive courses for students worldwide.</p>
+                    </div>
+                </div>
+        
+             
+                <div class="project-card">
+                    <img src="../images/project1.png" alt="Project 5" class="project-image">
+                    <div class="project-info">
+                        <h3>Crypto Portfolio Manager</h3>
+                        <p>An app that tracks cryptocurrency investments and market trends.</p>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+    </body>
+</html>

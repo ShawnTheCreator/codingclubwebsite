@@ -4,28 +4,34 @@ const jwt = require('jsonwebtoken');
 const pool = require('../config/db');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 dotenv.config();
 
 const router = express.Router();
+router.use(cookieParser());
+
 const JWT_SECRET = process.env.JWT_SECRET;
 
 if (!JWT_SECRET) {
-  console.error("Error: JWT_SECRET is not defined in .env");
-  process.exit(1);
+  throw new Error("JWT_SECRET is not defined in .env");
 }
 
+// ✅ Secure CORS Configuration
 const corsOptions = {
-  origin: 'https://crashcoders.netlify.app/', 
+  origin: 'https://crashcoders.netlify.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-  credentials: false
+  credentials: true
 };
 
 router.use(cors(corsOptions));
+router.options('*', cors(corsOptions)); // Handle preflight requests
 
+// ✅ Middleware to Authenticate JWT
 const authenticateJWT = (req, res, next) => {
-  const token = req.header("Authorization")?.replace("Bearer ", "");
+  const token = req.cookies.token || req.header("Authorization")?.replace("Bearer ", "");
+
   if (!token) {
     return res.status(401).json({ message: "Authorization required" });
   }
@@ -39,10 +45,7 @@ const authenticateJWT = (req, res, next) => {
   });
 };
 
-
-router.options('*', cors(corsOptions));
-
-
+// ✅ SIGNUP Route
 router.post('/signup', async (req, res) => {
   const { name, email, password } = req.body; 
 
@@ -58,8 +61,8 @@ router.post('/signup', async (req, res) => {
       [name, email, hashedPassword]
     );
 
- 
     const { password: _, ...userWithoutPassword } = newUser.rows[0];
+
     res.status(201).json({ 
       message: 'User created successfully', 
       user: userWithoutPassword 
@@ -70,7 +73,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-
+// ✅ LOGIN Route
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -91,11 +94,17 @@ router.post('/login', async (req, res) => {
       { expiresIn: '1h' }
     );
 
-    
+    // ✅ Securely Set JWT in HTTP-Only Cookie
+    res.cookie('token', token, {
+      httpOnly: true,   // Prevent XSS
+      secure: true,     // HTTPS only
+      sameSite: 'Strict', // Prevent CSRF
+      maxAge: 3600000   // 1 hour
+    });
+
     const { password: _, ...userWithoutPassword } = user.rows[0];
     res.status(200).json({ 
       message: 'Login successful', 
-      token, 
       user: userWithoutPassword 
     });
   } catch (err) {
@@ -104,17 +113,22 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// ✅ LOGOUT Route (Clears JWT Cookie)
+router.post('/logout', (req, res) => {
+  res.clearCookie('token', {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Strict'
+  });
+  res.status(200).json({ message: 'Logged out successfully' });
+});
 
+// ✅ DELETE ACCOUNT Route (Uses JWT)
 router.delete('/delete-account', authenticateJWT, async (req, res) => {
-  const { email } = req.body;
-  const { user } = req;
-
-  if (email !== user.email) {
-    return res.status(403).json({ message: "You can only delete your own account" });
-  }
+  const { user } = req; // Get user from JWT
 
   try {
-    const deleteResult = await pool.query('DELETE FROM public.users WHERE email = $1', [email]);
+    const deleteResult = await pool.query('DELETE FROM public.users WHERE email = $1', [user.email]);
     if (deleteResult.rowCount > 0) {
       res.status(200).json({ message: 'Account successfully deleted' });
     } else {

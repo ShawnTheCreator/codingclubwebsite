@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="../css/Events.css" />
+      <link rel="stylesheet" href="../css/Navbar.css" />
+      <link rel="stylesheet" href="../css/Banner.css" />
+      <script src="../javascript/SliderControls.js"></script>
+    </head>
+    <body>
+        <input type="checkbox" id="mobile-menu-toggle">
+
+
+<nav class="navbar">
+    <div class="navbar-content">
+       
+        <label for="mobile-menu-toggle" class="mobile-menu-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </label>
+        
+    
+        <a href="#" class="logo">
+            <img src="../images/Logo.png" alt="Code Crashers Logo">
+            <span>Code Crashers</span>
+        </a>
+        
+        
+   
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="../html/About.html">About</a></li>
+                <li><a href="./Projects.html">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        
+     
+        <a href="./html/Login.html" class="join-button">Join Now</a>
+    </div>
+</nav>
+
+
+<div class="side-nav">
+    <ul class="nav-links">
+        <li><a href="../home.html">Home</a></li>
+                <li><a href="./Projects.html">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="./html/Login.html" class="join-button">Join Now</a>
+</div>
+
+
+<div class="overlay" onclick="document.getElementById('mobile-menu-toggle').checked = false;"></div>
+<section class="events-section" id="events">
+    <h2 class="events-title">Upcoming Events</h2>
+    <div class="events-slider">
+        <button class="slider-button prev" onclick="slideLeft()">&#10094;</button>
+        <div class="events-container" id="eventSlider">
+     
+            <div class="event-card">
+                <img class="event-image" src="../images/img1.jpeg" alt="Test Engineering and Automation Summit">
+                <div class="event-info">
+                    <h3>Test Engineering and Automation Summit - Johannesburg 2025</h3>
+                    <p>Summit 2025 in Johannesburg will focus on<br /> the theme 'Engineering the Future of Testing: Quality, Innovation, and Agility.'</p>
+                    <ul>
+                        <li><strong>Date:</strong> 07 Mar 2025</li>
+                        <li><strong>Place:</strong> Gallagher Convention Centre, Johannesburg, South Africa</li>
+                        <li><strong>Time:</strong> 09:00 AM - 05:10 PM</li>
+                    </ul>
+                    <a href="https://10times.com/e1d1-k1d1-8ppg-k" target="_blank">More Info</a>
+                </div>
+            </div>
+
+   
+            <div class="event-card">
+                <img class="event-image" src="../images/img22.jpeg" alt="IT Leaders Forum 2025">
+                <div class="event-info">
+                    <h3>IT Leaders Forum 2025</h3>
+                    <p>The IT Leaders Forum is designed to help CIOs and IT executives navigate the future of business and technology.</p>
+                    <ul>
+                        <li><strong>Date:</strong> 12 Mar 2025</li>
+                        <li><strong>Place:</strong> Radisson Blu Gautrain Hotel,<br /> Sandton</li>
+                        <li><strong>Time:</strong> 09:00 AM - 06:00 PM</li>
+                    </ul>
+                    <a href="https://10times.com/e1d5-942s-gzrx-g" target="_blank">More Info</a>
+                </div>
+            </div>
+
+        
+            <div class="event-card">
+                <img class="event-image" src="../images/img3.jpg" alt="GMG Forum Johannesburg 2025">
+                <div class="event-info">
+                    <h3>GMG Forum Johannesburg 2025</h3>
+                    <p>This event unites South Africa's mining industry professionals to discuss innovation and sustainability.</p>
+                    <ul>
+                        <li><strong>Date:</strong> 12 - 13 Mar 2025</li>
+                        <li><strong>Place:</strong> 54 on Bath, Johannesburg, South Africa</li>
+                        <li><strong>Time:</strong> 09:00 AM - 06:00 PM</li>
+                    </ul>
+                    <a href="https://10times.com/gmg-forum-johannesburg" target="_blank">More Info</a>
+                </div>
+            </div>
+
+          
+            <div class="event-card">
+                <img class="event-image" src="../images/img4.png" alt="Cyber Security Summit South Africa 2025">
+                <div class="event-info">
+                    <h3>Cyber Security Summit South Africa 2025</h3>
+                    <p>An exclusive event for cybersecurity leaders in the country, discussing goals and strategies.</p>
+                    <ul>
+                        <li><strong>Date:</strong> 13 Mar 2025</li>
+                        <li><strong>Place:</strong> Johannesburg, South Africa</li>
+                        <li><strong>Time:</strong> 09:00 AM - 06:00 PM</li>
+                    </ul>
+                    <a href="https://10times.com/e1x2-z3z2-d2ss" target="_blank">More Info</a>
+                </div>
+            </div>
+
+      
+            <div class="event-card">
+                <img class="event-image" src="../images/img5.jpg" alt="Proplas Africa 2025">
+                <div class="event-info">
+                    <h3>Proplas Africa 2025</h3>
+                    <p>The ultimate packaging industry trade show featuring cutting-edge machinery, products, and services.</p>
+                    <ul>
+                        <li><strong>Date:</strong> 11 - 14 Mar 2025</li>
+                        <li><strong>Place:</strong> Johannesburg Expo Centre, Johannesburg</li>
+                        <li><strong>Time:</strong> 09:00 AM - 06:00 PM</li>
+                    </ul>
+                    <a href="https://10times.com/e1x2-45g8-kkrx" target="_blank">More Info</a>
+                </div>
+            </div>
+
+      
+            <div class="event-card">
+                <img class="event-image" src="../images/img6.webp" alt="Public Sector Cybersecurity Summit 2025">
+                <div class="event-info">
+                    <h3>Public Sector Cybersecurity Summit 2025</h3>
+                    <p>Insights from case studies and experts, focusing on emerging threats and risk mitigation strategies.</p>
+                    <ul>
+                        <li><strong>Date:</strong> 03 Apr 2025</li>
+                        <li><strong>Place:</strong> Gallagher Convention Centre, Johannesburg</li>
+                        <li><strong>Time:</strong> 09:00 AM - 06:00 PM</li>
+                    </ul>
+                    <a href="https://10times.com/e1rp-04g4-9rff" target="_blank">More Info</a>
+                </div>
+            </div>
+
+        
+            <div class="event-card">
+                <img class="event-image" src="../images/img7.jpg" alt="African Astronomical Society Hackathon">
+                <div class="event-info">
+                    <h3>African Astronomical Society Hackathon</h3>
+                    <p>Join us for the AfAS-2025 Data Science Hackathon under the theme “Connecting Astronomy in Africa: A Pathway to Growth.”</p>
+                    <ul>
+                        <li><strong>Date:</strong> 20-21 Mar 2025</li>
+                        <li><strong>Place:</strong> Emperors Palace, Gauteng</li>
+                        <li><strong>Time:</strong> 09:00 AM - 04:00 PM, 2 Days</li>
+                    </ul>
+                    <a href="https://www.africanastronomicalsociety.org/2024/12/12/join-the-afas-2025-data-science-hackathon/#:~:text=Event%20Details%3A,Location%3A%20Emperors%20Palace%2C%20Gauteng" target="_blank">More Info</a>
+                </div>
+            </div>
+
+   
+            <div class="event-card">
+                <img class="event-image" src="../images/img88.png" alt="Entelect Challenge 2025">
+                <div class="event-info">
+                    <h3>Entelect Challenge 2025</h3>
+                    <p>Participate in a one-day hackathon with a chance to win from a R20,000 prize pool!</p>
+                    <ul>
+                        <li><strong>Date:</strong> 1 Mar 2025</li>
+                        <li><strong>Place:</strong> 3 Melrose Blvd, Melrose, Johannesburg</li>
+                        <li><strong>Time:</strong> 09:00 AM - 04:00 PM</li>
+                    </ul>
+                    <a href="https://forum.entelect.co.za/c/entelect-challenge-2025/64" target="_blank">More Info</a>
+                </div>
+            </div>
+
+
+            <div class="event-card">
+                <img class="event-image" src="../images/eduvos.png" alt="Can't Find Any Hackathon">
+                <div class="event-info">
+                    <h3>Can't Find Any Hackathon</h3>
+                    <p>Sign Up and keep up to date with upcoming hackathons!</p>
+                    <ul>
+                        <li><strong>Date:</strong> Ongoing</li>
+                        <li><strong>Place:</strong> Online</li>
+                        <li><strong>Time:</strong> N/A</li>
+                    </ul>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2-KizJH6LjYvrUWDUk571h7uEMipkYjf_6DDW2VJ3cXxJTA/viewform?usp=header" target="_blank">More Info</a>
+                </div>
+            </div>
+        </div>
+        <button class="slider-button next" onclick="slideRight()">&#10095;</button>
+    </div>
+</section>
+
+
+    </body>
+</html>
